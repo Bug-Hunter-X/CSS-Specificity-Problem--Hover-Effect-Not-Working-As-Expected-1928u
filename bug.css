@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates an issue with unexpected behavior when using the `:hover` pseudo-class in conjunction with an element's default styling.  The hover effect doesn't apply as expected due to specificity issues.
+
+```css
+a {
+  color: blue;
+}
+a:hover {
+  color: red;
+}
+
+/* Unrelated styles, potentially adding to specificity conflict */
+.container a {
+    font-size: 16px;
+}
+```
+
+This is a common scenario, where the specificity of `.container a` could override the specificity of `a:hover` if an element with both classes is present, or nested within the `.container`.
